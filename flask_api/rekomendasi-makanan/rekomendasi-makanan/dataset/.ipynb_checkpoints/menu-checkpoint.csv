@@ -1,0 +1,26 @@
+id,nama_menu,kategori,deskripsi,harga,gambar
+1,Kue Lapis,dessert,kue lapis tradisional manis lembut,12000,1.png
+2,Kelepon,dessert,kelepon isi gula merah kelapa,10000,2.png
+3,Onde Onde,dessert,onde onde wijen isi kacang hijau,12000,3.png
+4,Kue Putu,dessert,kue putu pandan isi gula merah,10000,4.png
+5,Bika Ambon,dessert,bika ambon khas medan lembut,15000,5.png
+6,Serabi,dessert,serabi tradisional gurih manis,10000,6.png
+7,Donat,dessert,donat topping coklat warna warni,12000,7.png
+8,Risol,snack,risol goreng isi sayur dan mayo,10000,8.png
+9,Lemper,snack,lemper ayam dibungkus daun pisang,10000,9.png
+10,Bronis,dessert,brownies coklat lembut manis,15000,10.png
+11,Paket Specials,paket,paket catering menu spesial lengkap,30000,11.png
+12,Paket Hemat,paket,paket catering hemat ekonomis,25000,12.png
+13,Paket Sultan,paket,paket catering premium lengkap,50000,13.png
+14,Birthday Cake,dessert,custom birthday cake berbagai rasa,75000,14.png
+15,Snackbox Hemat,snackbox,paket snackbox hemat isi lengkap,20000,15.png
+16,Snackbox Hajat,snackbox,snackbox acara hajatan lengkap,25000,16.png
+17,Snackbox Sultan,snackbox,snackbox premium isi lengkap,35000,17.png
+18,Nasi Kuning,nasi,nasi kuning lauk lengkap,25000,18.png
+19,Nasi Ayam Geprek,nasi,nasi ayam geprek sambal pedas,22000,19.png
+20,Nasi Ayam Bakar,nasi,nasi ayam bakar bumbu khas,25000,20.png
+21,Nasi Katsu,nasi,nasi ayam katsu saus spesial,25000,21.png
+22,Nasi Ayam Uduk,nasi,nasi uduk ayam lengkap,23000,22.png
+23,Nasi Bakar,nasi,nasi bakar isi ayam dan sambal,22000,23.png
+24,Nasi Goreng,nasi,nasi goreng seafood spesial,20000,24.png
+25,Seblak,makanan,seblak pedas topping lengkap,18000,25.png
