@@ -45,7 +45,7 @@
                             @if($product->gambar)
                                 <img src="{{ asset('images/' . $product->gambar) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->nama_menu }}" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop'">
                             @else
-                                <div class="w-full h-full bg-olive-100 flex items-center justify-center text-olive-500 font-bold font-title">Widia Catering</div>
+                                <div class="w-full h-full bg-olive-100 flex items-center justify-center text-olive-500 font-bold font-title">Dinda Catering</div>
                             @endif
                             <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-gray-900 font-semibold text-xs py-1 px-3 rounded-full shadow-sm">{{ $product->kategori }}</span>
                         </div>

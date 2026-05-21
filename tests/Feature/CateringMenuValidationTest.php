@@ -6,14 +6,14 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
-test('seeded customer name is Widia Customer', function () {
+test('seeded customer name is Dinda Customer', function () {
     // Run seeders
     $this->seed(\Database\Seeders\DatabaseSeeder::class);
 
-    // Verify customer user exists with name Widia Customer
+    // Verify customer user exists with name Dinda Customer
     $this->assertDatabaseHas('users', [
-        'email' => 'customer@widia.com',
-        'name' => 'Widia Customer',
+        'email' => 'customer@dinda.com',
+        'name' => 'Dinda Customer',
         'role' => 'customer'
     ]);
 });

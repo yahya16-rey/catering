@@ -18,7 +18,7 @@ class PaymentController extends Controller
         $statusCode = $request->query('status_code');
         $transactionStatus = $request->query('transaction_status');
 
-        // Parse order id from WIDIA-X-TIME
+        // Parse order id from DINDA-X-TIME
         $orderId = null;
         if ($orderIdInput) {
             $parts = explode('-', $orderIdInput);

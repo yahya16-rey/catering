@@ -46,17 +46,7 @@
                 @enderror
             </div>
 
-            <!-- Role Selection (Replaces Confirm Password) -->
-            <div>
-                <label for="role" class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Daftar Sebagai (Role)</label>
-                <select id="role" name="role" required class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-olive-500 transition-colors @error('role') border-red-500 @enderror">
-                    <option value="customer" {{ old('role') == 'customer' ? 'selected' : '' }}>Customer (Pelanggan)</option>
-                    <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin (Pengelola)</option>
-                </select>
-                @error('role')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
+
 
             <button type="submit" class="w-full bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3.5 rounded-full text-center text-sm shadow-md shadow-olive-500/10 hover:shadow-lg transition-all">
                 Daftar

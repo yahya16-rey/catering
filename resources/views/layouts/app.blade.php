@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ?? 'Widia Catering' }} - Premium Culinary AI</title>
+    <title>{{ $title ?? 'Dinda Catering' }} - Premium Culinary AI</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,9 +58,9 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center gap-2">
-                        <span class="w-10 h-10 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-xl">W</span>
+                        <span class="w-10 h-10 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-xl">D</span>
                         <div class="flex flex-col">
-                            <span class="font-title font-bold text-xl text-gray-900 leading-none">Widia Catering</span>
+                            <span class="font-title font-bold text-xl text-gray-900 leading-none">Dinda Catering</span>
                             <span class="text-xs text-olive-500 font-semibold tracking-wider uppercase">Culinary Intelligence</span>
                         </div>
                     </a>
@@ -169,14 +169,14 @@
                 <!-- Branding -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="w-10 h-10 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-xl">W</span>
-                        <span class="font-title font-bold text-xl text-white">Widia Catering</span>
+                        <span class="w-10 h-10 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-xl">D</span>
+                        <span class="font-title font-bold text-xl text-white">Dinda Catering</span>
                     </div>
                     <p class="text-sm leading-relaxed max-w-sm mb-4">
                         Elevating Culinary Intelligence with precision-driven nutrition and gourmet recipes. Platform catering modern berbasis AI pertama di Indonesia.
                     </p>
                     <p class="text-xs text-gray-600">
-                        &copy; 2026 Widia Catering. All Rights Reserved.
+                        &copy; 2026 Dinda Catering. All Rights Reserved.
                     </p>
                 </div>
 
@@ -194,7 +194,7 @@
                 <div>
                     <h3 class="text-white font-title font-semibold mb-4 text-sm uppercase tracking-wider">Hubungi Kami</h3>
                     <p class="text-sm mb-2">Jl. Sudirman No. 123, Jakarta</p>
-                    <p class="text-sm mb-2">info@widiacatering.com</p>
+                    <p class="text-sm mb-2">info@dindacatering.com</p>
                     <p class="text-sm">+62 812-3456-7890</p>
                 </div>
             </div>

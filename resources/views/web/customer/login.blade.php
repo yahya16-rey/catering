@@ -13,7 +13,7 @@
         <div class="text-center mb-8">
             <span class="w-12 h-12 rounded-full bg-olive-50 text-olive-500 flex items-center justify-center text-xl font-bold mx-auto mb-4">🔑</span>
             <h1 class="font-title font-extrabold text-2xl text-gray-900 mb-2">Selamat Datang Kembali</h1>
-            <p class="text-xs text-gray-400 font-semibold">Silakan masuk menggunakan akun Widia Catering Anda.</p>
+            <p class="text-xs text-gray-400 font-semibold">Silakan masuk menggunakan akun Dinda Catering Anda.</p>
         </div>
 
         <form method="POST" action="{{ route('customer.store_login') }}" class="space-y-6">

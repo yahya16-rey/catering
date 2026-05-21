@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Widia Catering' }}</title>
+    <title>{{ $title ?? 'Dinda Catering' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Footer Styling -->
@@ -118,7 +118,7 @@
             <div class="footer-about mb-4 col-md-3">
                 <h5 class="fw-bold">Tentang Kami</h5>
                 <p class="small">
-                    <strong>Widia Catering</strong> adalah usaha katering terpercaya sejak 2015. Kami menyajikan hidangan lezat dan berkualitas untuk setiap acara spesial Anda.
+                    <strong>Dinda Catering</strong> adalah usaha katering terpercaya sejak 2015. Kami menyajikan hidangan lezat dan berkualitas untuk setiap acara spesial Anda.
                 </p>
             </div>
 
@@ -153,7 +153,7 @@
         </div>
 
         <div class="footer-bottom text-center pt-3 border-top mt-3">
-            <p class="mb-0 small">&copy; {{ date('Y') }} <strong>Widia Catering</strong>. All rights reserved.</p>
+            <p class="mb-0 small">&copy; {{ date('Y') }} <strong>Dinda Catering</strong>. All rights reserved.</p>
         </div>
     </footer>
 

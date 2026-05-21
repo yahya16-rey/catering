@@ -13,18 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin (Email: admin@widia.com | Password: password)
+        // Create Admin (Email: admin@dinda.com | Password: password)
         User::create([
-            'name' => 'Widia Admin',
-            'email' => 'admin@widia.com',
+            'name' => 'Dinda Admin',
+            'email' => 'admin@dinda.com',
             'password' => Hash::make('password'),
             'role' => 'admin',
         ]);
 
-        // Create Customer (Email: customer@widia.com | Password: password)
+        // Create Customer (Email: customer@dinda.com | Password: password)
         User::create([
-            'name' => 'Widia Customer',
-            'email' => 'customer@widia.com',
+            'name' => 'Dinda Customer',
+            'email' => 'customer@dinda.com',
             'password' => Hash::make('password'),
             'role' => 'customer',
         ]);

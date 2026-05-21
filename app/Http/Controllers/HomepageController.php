@@ -12,7 +12,7 @@ class HomepageController extends Controller
         $products = Product::where('is_available', true)->take(3)->get();
         return view('web.homepage', [
             'products' => $products,
-            'title' => 'Widia Catering'
+            'title' => 'Dinda Catering'
         ]);
     }
 

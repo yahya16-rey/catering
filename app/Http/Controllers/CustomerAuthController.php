@@ -29,8 +29,7 @@ class CustomerAuthController extends Controller
         $validasi = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'email' => 'required|max:255|email|unique:users,email',
-            'password' => 'required|min:6',
-            'role' => 'required|in:customer,admin'
+            'password' => 'required|min:6'
         ]);
 
         if ($validasi->fails()) {
@@ -44,7 +43,7 @@ class CustomerAuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'role' => 'customer',
         ]);
 
         return redirect()->route('customer.login')->with('successMessage', 'Registrasi Berhasil. Silakan login.');

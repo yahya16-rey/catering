@@ -37,7 +37,7 @@ class MidtransService
 
         $params = [
             'transaction_details' => [
-                'order_id' => 'WIDIA-' . $order->id . '-' . time(),
+                'order_id' => 'DINDA-' . $order->id . '-' . time(),
                 'gross_amount' => (int) $order->total_harga,
             ],
             'item_details' => $itemDetails,

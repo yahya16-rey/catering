@@ -5,7 +5,7 @@
 <section class="bg-olive-50 py-20 border-b border-olive-100/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="text-xs font-bold text-olive-500 uppercase tracking-widest bg-white px-3 py-1.5 rounded-full border border-olive-100/80">Masa Depan Catering</span>
-        <h1 class="font-title font-extrabold text-4xl sm:text-5xl text-gray-900 mt-4 mb-6">Tentang Widia Catering</h1>
+        <h1 class="font-title font-extrabold text-4xl sm:text-5xl text-gray-900 mt-4 mb-6">Tentang Dinda Catering</h1>
         <p class="text-gray-600 max-w-xl mx-auto leading-relaxed text-sm sm:text-base">
             Membawa revolusi industri catering dengan mensinergikan kelezatan rasa tradisional dan kecerdasan buatan untuk kesehatan Anda.
         </p>
@@ -26,7 +26,7 @@
             <div>
                 <h2 class="font-title text-3xl font-extrabold text-gray-900 mb-6">Evolusi dari Tradisi ke Inteligensi</h2>
                 <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
-                    Widia Catering didirikan dari hasrat mendalam akan cita rasa kuliner Indonesia. Selama bertahun-tahun, kami telah melayani ratusan klien korporat dan ribuan perayaan penting dengan dedikasi penuh.
+                    Dinda Catering didirikan dari hasrat mendalam akan cita rasa kuliner Indonesia. Selama bertahun-tahun, kami telah melayani ratusan klien korporat dan ribuan perayaan penting dengan dedikasi penuh.
                 </p>
                 <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
                     Memasuki era digital, kami menyadari tantangan baru: kebutuhan nutrisi individu yang unik serta pentingnya efisiensi bagi organisasi modern. Oleh karena itu, kami meluncurkan platform Culinary AI yang merekomendasikan menu paling sesuai secara personal demi kesehatan optimal tim Anda.

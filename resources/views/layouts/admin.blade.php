@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard Admin - Widia Catering</title>
+    <title>Dashboard Admin - Dinda Catering</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,9 +58,9 @@
             <!-- Header/Branding -->
             <div class="h-20 flex items-center px-8 border-b border-gray-50">
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
-                    <span class="w-8 h-8 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-base">W</span>
+                    <span class="w-8 h-8 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-base">D</span>
                     <div class="flex flex-col">
-                        <span class="font-title font-bold text-base text-gray-900 leading-none">Widia Admin</span>
+                        <span class="font-title font-bold text-base text-gray-900 leading-none">Dinda Admin</span>
                         <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Catering Management</span>
                     </div>
                 </a>
@@ -165,7 +165,7 @@
                         <span class="w-8 h-8 rounded-full bg-olive-500 text-white flex items-center justify-center font-bold text-xs font-title">A</span>
                         <div class="flex flex-col">
                             <span class="text-xs font-bold text-gray-900 flex items-center gap-1">
-                                Admin Widia
+                                Admin Dinda
                                 <span class="text-[8px] text-gray-400">▼</span>
                             </span>
                             <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Manager</span>
@@ -176,7 +176,7 @@
                     <div x-show="open" x-transition class="absolute right-0 mt-3 w-56 bg-white border border-gray-100 rounded-3xl shadow-xl py-2 z-50 text-left">
                         <div class="px-4 py-2 border-b border-gray-50">
                             <span class="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Masuk Sebagai</span>
-                            <span class="text-xs font-bold text-gray-900">admin@widia.com</span>
+                            <span class="text-xs font-bold text-gray-900">admin@dinda.com</span>
                         </div>
                         <div class="p-1.5 space-y-0.5">
                             <a href="{{ route('home') }}" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">

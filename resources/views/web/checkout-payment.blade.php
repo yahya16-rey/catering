@@ -25,7 +25,7 @@
         <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 text-center">
             <span class="text-4xl mb-4 block">💳</span>
             <h1 class="font-title font-extrabold text-2xl text-gray-900 mb-2">Selesaikan Pembayaran</h1>
-            <p class="text-xs text-gray-400 font-semibold mb-6">Order ID: WIDIA-{{ $order->id }}</p>
+            <p class="text-xs text-gray-400 font-semibold mb-6">Order ID: DINDA-{{ $order->id }}</p>
             
             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8">
                 <span class="text-xs font-semibold text-gray-500 block mb-1">Total Pembayaran</span>

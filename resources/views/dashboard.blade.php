@@ -5,7 +5,7 @@
 <div class="flex justify-between items-center mb-8">
     <div>
         <h1 class="font-title font-extrabold text-2xl text-gray-900 mb-1">Dashboard Analytics</h1>
-        <p class="text-xs text-gray-400 font-semibold">Selamat datang di sistem manajemen katering kecerdasan buatan Widia Catering.</p>
+        <p class="text-xs text-gray-400 font-semibold">Selamat datang di sistem manajemen katering kecerdasan buatan Dinda Catering.</p>
     </div>
 </div>
 

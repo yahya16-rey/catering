@@ -74,7 +74,7 @@
                         @if($product->gambar)
                             <img src="{{ asset('images/' . $product->gambar) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->nama_menu }}" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop'">
                         @else
-                            <div class="w-full h-full bg-olive-100 flex items-center justify-center text-olive-500 font-bold font-title">Widia Catering</div>
+                            <div class="w-full h-full bg-olive-100 flex items-center justify-center text-olive-500 font-bold font-title">Dinda Catering</div>
                         @endif
                         <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-gray-900 font-semibold text-xs py-1 px-3 rounded-full shadow-sm">{{ $product->kategori }}</span>
                     </div>
@@ -126,7 +126,7 @@
             <div class="text-center">
                 <div class="w-16 h-16 rounded-3xl bg-olive-50 text-olive-500 flex items-center justify-center font-bold font-title text-xl mx-auto mb-6">3</div>
                 <h3 class="font-title font-bold text-lg mb-2 text-gray-900">Kurasi Chef</h3>
-                <p class="text-sm text-gray-500 max-w-xs mx-auto">Setiap menu direkomendasikan disiapkan segar oleh tim kuliner berpengalaman Widia Catering.</p>
+                <p class="text-sm text-gray-500 max-w-xs mx-auto">Setiap menu direkomendasikan disiapkan segar oleh tim kuliner berpengalaman Dinda Catering.</p>
             </div>
         </div>
     </div>
@@ -138,7 +138,7 @@
         <h2 class="font-title text-3xl font-extrabold text-gray-900 text-center mb-16">Apa Kata Mereka</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-                <p class="text-gray-500 text-sm italic mb-6">"Widia Catering mengubah cara kami mengatur logistik makan siang kantor. Sangat efisien dan ramah nutrisi!"</p>
+                <p class="text-gray-500 text-sm italic mb-6">"Dinda Catering mengubah cara kami mengatur logistik makan siang kantor. Sangat efisien dan ramah nutrisi!"</p>
                 <div class="flex items-center gap-3">
                     <span class="w-10 h-10 rounded-full bg-olive-100 text-olive-500 flex items-center justify-center font-bold text-xs">AM</span>
                     <div>

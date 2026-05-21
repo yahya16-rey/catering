@@ -1,0 +1,16 @@
+services:
+  flask_api:
+    build:
+      context: ./flask_api
+      dockerfile: Dockerfile
+    container_name: catering_flask_api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask_api:/app
+    environment:
+      - FLASK_ENV=development
+      - PORT=5000
+    # Gunicorn with --reload is used here for auto-reloading when source files change
+    command: gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 --reload app:app
+    restart: always
