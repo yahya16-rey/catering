@@ -89,13 +89,29 @@
                     @auth
                         @if(Auth::user()->role === 'admin')
                             <a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-olive-500 text-sm font-medium">Dashboard Admin</a>
+                            <form action="{{ route('customer.logout') }}" method="POST" class="inline ml-2">
+                                @csrf
+                                <button type="submit" class="text-gray-500 hover:text-red-500 text-sm font-medium transition-colors">Logout</button>
+                            </form>
                         @else
-                            <span class="text-gray-700 text-sm font-medium font-title">Hai, {{ Auth::user()->name }}</span>
+                            <div class="relative group">
+                                <button class="flex items-center gap-1 text-gray-700 hover:text-olive-500 text-sm font-medium font-title focus:outline-none py-2">
+                                    Hai, {{ Auth::user()->name }}
+                                    <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <!-- Dropdown Menu -->
+                                <div class="absolute right-0 mt-0 w-48 bg-white border border-gray-100 rounded-2xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+                                    <div class="py-1">
+                                        <a href="{{ route('orders.history') }}" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-olive-50 hover:text-olive-600 transition-colors font-medium">Riwayat Pesanan</a>
+                                        <div class="border-t border-gray-50"></div>
+                                        <form action="{{ route('customer.logout') }}" method="POST" class="block w-full">
+                                            @csrf
+                                            <button type="submit" class="block w-full text-left px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium">Logout</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         @endif
-                        <form action="{{ route('customer.logout') }}" method="POST" class="inline">
-                            @csrf
-                            <button type="submit" class="text-gray-500 hover:text-red-500 text-sm font-medium transition-colors">Logout</button>
-                        </form>
                     @else
                         <a href="{{ route('customer.login') }}" class="text-gray-700 hover:text-olive-500 text-sm font-medium">Login</a>
                         <a href="{{ route('customer.register') }}" class="bg-olive-500 hover:bg-olive-600 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-md shadow-olive-500/10 hover:shadow-lg transition-all duration-200">Daftar</a>
@@ -129,9 +145,13 @@
                 <a href="{{ route('menu.list') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-olive-500 hover:bg-gray-50">Menu</a>
                 <a href="{{ route('about') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-olive-500 hover:bg-gray-50">Tentang Kami</a>
                 @auth
+                    <div class="px-3 py-2 mt-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Hai, {{ Auth::user()->name }}</div>
+                    @if(Auth::user()->role === 'customer')
+                        <a href="{{ route('orders.history') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-olive-500 hover:bg-gray-50 {{ request()->routeIs('orders.history') ? 'text-olive-500 font-semibold' : '' }}">Riwayat Pesanan</a>
+                    @endif
                     <form action="{{ route('customer.logout') }}" method="POST" class="block w-full">
                         @csrf
-                        <button type="submit" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-500 hover:bg-gray-50">Logout</button>
+                        <button type="submit" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:text-red-700 hover:bg-red-50">Logout</button>
                     </form>
                 @else
                     <a href="{{ route('customer.login') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-olive-500 hover:bg-gray-50">Login</a>

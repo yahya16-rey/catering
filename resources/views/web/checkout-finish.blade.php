@@ -37,9 +37,12 @@
                 <p class="text-sm text-gray-500 leading-relaxed mb-8">Maaf, transaksi Anda tidak dapat diselesaikan atau telah kedaluwarsa. Silakan coba memesan kembali.</p>
             @endif
 
-            <div class="flex gap-4">
-                <a href="{{ route('home') }}" class="flex-grow bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3.5 rounded-full text-center text-sm shadow-md transition-all">Kembali ke Beranda</a>
-                <a href="{{ route('menu.list') }}" class="flex-grow border border-gray-200 hover:border-olive-500 text-gray-700 hover:text-white hover:bg-olive-500 font-semibold py-3.5 rounded-full text-center text-sm transition-all">Pesan Menu Lain</a>
+            <div class="flex flex-col gap-3">
+                <a href="{{ route('orders.history') }}" class="w-full bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3.5 rounded-full text-center text-sm shadow-md transition-all">Lihat Riwayat Transaksi</a>
+                <div class="flex gap-4">
+                    <a href="{{ route('home') }}" class="flex-grow border border-gray-200 hover:border-olive-500 text-gray-700 hover:text-olive-500 font-semibold py-3.5 rounded-full text-center text-sm transition-all">Kembali ke Beranda</a>
+                    <a href="{{ route('menu.list') }}" class="flex-grow border border-gray-200 hover:border-olive-500 text-gray-700 hover:text-olive-500 font-semibold py-3.5 rounded-full text-center text-sm transition-all">Pesan Menu Lain</a>
+                </div>
             </div>
         </div>
     </div>

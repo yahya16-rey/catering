@@ -40,6 +40,10 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::get('/checkout', [HomepageController::class, 'checkout'])->name('checkout');
     Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.submit');
     
+    // Order History & Payments
+    Route::get('/orders/history', [OrderController::class, 'history'])->name('orders.history');
+    Route::get('/orders/{id}/payment', [OrderController::class, 'paymentPage'])->name('orders.payment');
+    
     // AI Recommendation
     Route::get('/recommend', [AiRecommendationController::class, 'index'])->name('recommend.index');
     Route::post('/recommend', [AiRecommendationController::class, 'recommend'])->name('recommend.submit');
@@ -66,5 +70,5 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'role:admin']], 
 
 // Fallback login redirect for laravel auth middleware
 Route::get('/login-redirect', function () {
-    return redirect()->route('customer.login');
+    return redirect()->route('customer.login')->with('errorMessage', 'Silakan login terlebih dahulu untuk dapat menggunakan fitur ini.');
 })->name('login');

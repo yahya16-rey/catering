@@ -161,4 +161,68 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('orders.index')->with('successMessage', 'Pesanan berhasil dihapus.');
     }
+
+    /**
+     * Customer Order History
+     */
+    public function history()
+    {
+        $orders = Order::with('orderItems.product', 'payment')
+            ->where('user_id', Auth::id())
+            ->latest()
+            ->paginate(5);
+
+        return view('web.orders-history', [
+            'orders' => $orders,
+            'title' => 'Riwayat Pesanan'
+        ]);
+    }
+
+    /**
+     * Customer Re-pay Order
+     */
+    public function paymentPage($id)
+    {
+        $order = Order::with('payment', 'orderItems.product')
+            ->where('user_id', Auth::id())
+            ->findOrFail($id);
+
+        if ($order->status_pembayaran !== 'Pending') {
+            return redirect()->route('orders.history')->with('errorMessage', 'Pesanan ini sudah dibayar atau tidak dapat dibayar lagi.');
+        }
+
+        $payment = $order->payment;
+        $snapToken = $payment ? $payment->snap_token : null;
+
+        // If payment doesn't exist or doesn't have a snap token, generate one
+        if (!$payment || !$snapToken) {
+            try {
+                $snapToken = $this->midtransService->getSnapToken($order, Auth::user(), $order->orderItems);
+                if (!$snapToken) {
+                    throw new \Exception("Gagal menghubungi gerbang pembayaran Midtrans. Silakan hubungi admin.");
+                }
+
+                if (!$payment) {
+                    $payment = Payment::create([
+                        'order_id' => $order->id,
+                        'status' => 'Pending',
+                        'snap_token' => $snapToken,
+                    ]);
+                } else {
+                    $payment->update([
+                        'snap_token' => $snapToken,
+                    ]);
+                }
+            } catch (\Exception $e) {
+                return redirect()->route('orders.history')->with('errorMessage', $e->getMessage());
+            }
+        }
+
+        return view('web.checkout-payment', [
+            'order' => $order,
+            'payment' => $payment,
+            'snapToken' => $snapToken,
+            'title' => 'Pembayaran Pesanan'
+        ]);
+    }
 }
