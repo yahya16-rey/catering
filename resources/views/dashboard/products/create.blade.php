@@ -29,9 +29,11 @@
                 <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Kategori</label>
                 <select name="kategori" required class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-olive-500 transition-colors">
                     <option value="">Pilih Kategori...</option>
+                    <option value="Personal" {{ old('kategori') == 'Personal' ? 'selected' : '' }}>Personal</option>
+                    <option value="Dessert" {{ old('kategori') == 'Dessert' ? 'selected' : '' }}>Dessert</option>
+                    <option value="Snack" {{ old('kategori') == 'Snack' ? 'selected' : '' }}>Snack</option>
                     <option value="Corporate" {{ old('kategori') == 'Corporate' ? 'selected' : '' }}>Corporate</option>
                     <option value="Event" {{ old('kategori') == 'Event' ? 'selected' : '' }}>Event</option>
-                    <option value="Personal" {{ old('kategori') == 'Personal' ? 'selected' : '' }}>Personal</option>
                 </select>
             </div>
         </div>

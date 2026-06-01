@@ -44,6 +44,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
+        [x-cloak] { display: none !important; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #F9FAFB;
@@ -110,7 +111,7 @@
                         <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent-500 rounded-full"></span>
                     </button>
                     <!-- Dropdown box -->
-                    <div x-show="open" x-transition class="absolute right-0 mt-3 w-80 bg-white border border-gray-100 rounded-3xl shadow-xl py-4 z-50 text-left">
+                    <div x-show="open" x-cloak x-transition class="absolute right-0 mt-3 w-80 bg-white border border-gray-100 rounded-3xl shadow-xl py-4 z-50 text-left">
                         <div class="px-5 pb-2 mb-2 border-b border-gray-50 flex justify-between items-center">
                             <span class="text-xs font-bold text-gray-900">Notifikasi</span>
                             <span class="text-[10px] text-olive-500 font-bold bg-olive-50 px-2 py-0.5 rounded-full">3 Baru</span>
@@ -138,7 +139,7 @@
                         ⚙️
                     </button>
                     <!-- Settings drop down details -->
-                    <div x-show="open" x-transition class="absolute right-0 mt-3 w-64 bg-white border border-gray-100 rounded-3xl shadow-xl py-4 z-50 text-left">
+                    <div x-show="open" x-cloak x-transition class="absolute right-0 mt-3 w-64 bg-white border border-gray-100 rounded-3xl shadow-xl py-4 z-50 text-left">
                         <div class="px-5 pb-2 mb-2 border-b border-gray-50">
                             <span class="text-xs font-bold text-gray-900">Status Sistem</span>
                         </div>
@@ -173,7 +174,7 @@
                     </button>
 
                     <!-- Profile Dropdown panel -->
-                    <div x-show="open" x-transition class="absolute right-0 mt-3 w-56 bg-white border border-gray-100 rounded-3xl shadow-xl py-2 z-50 text-left">
+                    <div x-show="open" x-cloak x-transition class="absolute right-0 mt-3 w-56 bg-white border border-gray-100 rounded-3xl shadow-xl py-2 z-50 text-left">
                         <div class="px-4 py-2 border-b border-gray-50">
                             <span class="text-[10px] text-gray-400 font-bold block uppercase tracking-wider">Masuk Sebagai</span>
                             <span class="text-xs font-bold text-gray-900">admin@dinda.com</span>

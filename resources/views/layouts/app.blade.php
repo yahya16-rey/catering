@@ -213,7 +213,7 @@
                 <!-- Contact -->
                 <div>
                     <h3 class="text-white font-title font-semibold mb-4 text-sm uppercase tracking-wider">Hubungi Kami</h3>
-                    <p class="text-sm mb-2">Jl. Sudirman No. 123, Jakarta</p>
+                    <p class="text-sm mb-2">Jl. M.Toha No.01, Kelurahan Bandung, Tegal Selatan</p>
                     <p class="text-sm mb-2">info@dindacatering.com</p>
                     <p class="text-sm">+62 812-3456-7890</p>
                 </div>

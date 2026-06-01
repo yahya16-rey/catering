@@ -59,13 +59,15 @@ Route::post('/payment/webhook', [PaymentController::class, 'webhook'])
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('products', ProductsController::class);
-    Route::resource('orders', OrderController::class);
     
+    // Custom order routes must come BEFORE the resource route
     Route::get('/orders/export', function (Request $request) {
         $month = $request->input('month', now()->format('m'));
         $year = $request->input('year', now()->format('Y'));
         return Excel::download(new OrdersExport($month, $year), 'orders-' . $month . '-' . $year . '.xlsx');
     })->name('orders.export');
+
+    Route::resource('orders', OrderController::class);
 });
 
 // Fallback login redirect for laravel auth middleware
