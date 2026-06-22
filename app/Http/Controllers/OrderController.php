@@ -118,10 +118,19 @@ class OrderController extends Controller
     /**
      * Admin Order List
      */
-    public function index()
+    public function index(Request $request)
     {
-        $orders = Order::with('user', 'orderItems.product')->latest()->paginate(10);
-        return view('dashboard.admin.orders', compact('orders'));
+        $month = $request->input('month', now()->format('m'));
+        $year = $request->input('year', now()->format('Y'));
+
+        $orders = Order::with('user', 'orderItems.product')
+            ->whereMonth('created_at', $month)
+            ->whereYear('created_at', $year)
+            ->latest()
+            ->paginate(10)
+            ->appends(['month' => $month, 'year' => $year]);
+
+        return view('dashboard.admin.orders', compact('orders', 'month', 'year'));
     }
 
     /**

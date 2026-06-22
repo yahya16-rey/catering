@@ -11,8 +11,8 @@
 
 <!-- Filters & Excel Export -->
 <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
-    <form action="{{ route('orders.export') }}" method="GET" class="flex flex-wrap items-center gap-3 w-full md:w-auto">
-        <select name="month" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-olive-500">
+    <form action="{{ route('orders.index') }}" method="GET" class="flex flex-wrap items-center gap-3 w-full md:w-auto" id="filterForm">
+        <select name="month" onchange="document.getElementById('filterForm').submit()" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-olive-500">
             @for ($i = 1; $i <= 12; $i++)
                 <option value="{{ sprintf('%02d', $i) }}" {{ request('month', now()->format('m')) == sprintf('%02d', $i) ? 'selected' : '' }}>
                     {{ DateTime::createFromFormat('!m', $i)->format('F') }}
@@ -20,16 +20,16 @@
             @endfor
         </select>
 
-        <select name="year" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-olive-500">
+        <select name="year" onchange="document.getElementById('filterForm').submit()" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-olive-500">
             @for ($y = now()->year; $y >= 2020; $y--)
                 <option value="{{ $y }}" {{ request('year', now()->format('Y')) == $y ? 'selected' : '' }}>{{ $y }}</option>
             @endfor
         </select>
-
-        <button type="submit" class="bg-olive-500 hover:bg-olive-600 text-white font-semibold py-2.5 px-5 rounded-xl text-xs shadow-md transition-all flex items-center gap-1.5">
-            📊 Export Excel
-        </button>
     </form>
+    
+    <a href="{{ route('orders.export', ['month' => request('month', now()->format('m')), 'year' => request('year', now()->format('Y'))]) }}" class="bg-olive-500 hover:bg-olive-600 text-white font-semibold py-2.5 px-5 rounded-xl text-xs shadow-md transition-all flex items-center gap-1.5">
+        📊 Export Excel
+    </a>
 </div>
 
 <!-- Table -->

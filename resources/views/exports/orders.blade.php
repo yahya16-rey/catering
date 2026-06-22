@@ -34,7 +34,8 @@
         @endphp
         @foreach($order->orderItems as $item)
             @php
-                $itemTotal = $item->qty * $item->harga;
+                $itemTotal = $item->subtotal;
+                $hargaPorsi = $item->qty > 0 ? $item->subtotal / $item->qty : 0;
                 $totalPorsi += $item->qty;
                 $totalPenjualan += $itemTotal;
             @endphp
@@ -44,7 +45,7 @@
                 <td style="text-align: center; border: 1px solid #000000;">PSN{{ str_pad($order->id, 3, '0', STR_PAD_LEFT) }}</td>
                 <td style="border: 1px solid #000000;">{{ $item->product->nama_menu ?? 'Menu Terhapus' }}</td>
                 <td style="text-align: center; border: 1px solid #000000;">{{ $item->qty }}</td>
-                <td style="text-align: right; border: 1px solid #000000;">Rp{{ number_format($item->harga, 0, ',', '.') }}</td>
+                <td style="text-align: right; border: 1px solid #000000;">Rp{{ number_format($hargaPorsi, 0, ',', '.') }}</td>
                 <td style="text-align: right; border: 1px solid #000000;">Rp{{ number_format($itemTotal, 0, ',', '.') }}</td>
                 <td style="text-align: center; border: 1px solid #000000;">{{ $order->payment ? ucfirst($order->payment->metode ?? 'Transfer') : 'Transfer' }}</td>
                 <td style="text-align: center; border: 1px solid #000000;">{{ ucfirst($order->status_pesanan) }}</td>
