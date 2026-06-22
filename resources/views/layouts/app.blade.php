@@ -188,9 +188,12 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Branding -->
                 <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="w-10 h-10 rounded-full bg-olive-500 flex items-center justify-center text-white font-title font-bold text-xl">D</span>
-                        <span class="font-title font-bold text-xl text-white">Dinda Catering</span>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="{{ asset('images/logo-uhn.png') }}" alt="Logo Universitas Harkat Negeri" class="h-10 w-10 object-contain bg-white rounded-md p-1">
+                        <div>
+                            <span class="font-title font-bold text-xl text-white block leading-tight">Dinda Catering</span>
+                            <span class="text-xs text-gray-400 font-semibold">Universitas Harkat Negeri</span>
+                        </div>
                     </div>
                     <p class="text-sm leading-relaxed max-w-sm mb-4">
                         Elevating Culinary Intelligence with precision-driven nutrition and gourmet recipes. Platform catering modern berbasis AI pertama di Indonesia.

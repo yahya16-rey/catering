@@ -11,7 +11,7 @@
 
     <div class="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-sm">
         <div class="text-center mb-8">
-            <span class="w-12 h-12 rounded-full bg-olive-50 text-olive-500 flex items-center justify-center text-xl font-bold mx-auto mb-4">🔑</span>
+            <img src="{{ asset('images/logo-uhn.png') }}" alt="Universitas Harkat Negeri" class="h-20 mx-auto mb-4 object-contain">
             <h1 class="font-title font-extrabold text-2xl text-gray-900 mb-2">Selamat Datang Kembali</h1>
             <p class="text-xs text-gray-400 font-semibold">Silakan masuk menggunakan akun Dinda Catering Anda.</p>
         </div>
