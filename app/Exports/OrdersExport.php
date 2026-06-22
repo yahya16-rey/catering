@@ -3,11 +3,12 @@
 namespace App\Exports;
 
 use App\Models\Order;
-use Maatwebsite\Excel\Concerns\FromCollection;
-use Maatwebsite\Excel\Concerns\WithHeadings;
-use Illuminate\Support\Collection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Carbon\Carbon;
 
-class OrdersExport implements FromCollection, WithHeadings
+class OrdersExport implements FromView, ShouldAutoSize
 {
     protected $month;
     protected $year;
@@ -18,47 +19,20 @@ class OrdersExport implements FromCollection, WithHeadings
         $this->year = $year;
     }
 
-    public function collection(): Collection
+    public function view(): View
     {
-        return Order::with(['user', 'orderItems.product'])
+        $orders = Order::with(['user', 'orderItems.product', 'payment'])
             ->whereMonth('created_at', $this->month)
             ->whereYear('created_at', $this->year)
-            ->get()
-            ->map(function ($order) {
-                $menus = $order->orderItems->map(function ($item) {
-                    return ($item->product->nama_menu ?? 'Menu Terhapus') . ' (x' . $item->qty . ')';
-                })->implode(', ');
+            ->get();
+            
+        Carbon::setLocale('id');
+        $dateObj = Carbon::createFromDate($this->year, $this->month, 1);
+        $period = $dateObj->translatedFormat('F Y');
 
-                return [
-                    'ID Pesanan'        => $order->id,
-                    'Nama Customer'     => $order->user->name ?? 'Guest',
-                    'Email Customer'    => $order->user->email ?? '-',
-                    'Menu Dipesan'      => $menus,
-                    'Total Harga'       => $order->total_harga,
-                    'Status Pesanan'    => $order->status_pesanan,
-                    'Status Pembayaran' => $order->status_pembayaran,
-                    'Tanggal Kirim'     => $order->tanggal_pengiriman,
-                    'Alamat Kirim'      => $order->alamat,
-                    'Catatan'           => $order->catatan,
-                    'Tanggal Order'     => $order->created_at->format('d-m-Y H:i')
-                ];
-            });
-    }
-
-    public function headings(): array
-    {
-        return [
-            'ID Pesanan',
-            'Nama Customer',
-            'Email Customer',
-            'Menu Dipesan',
-            'Total Harga',
-            'Status Pesanan',
-            'Status Pembayaran',
-            'Tanggal Kirim',
-            'Alamat Kirim',
-            'Catatan',
-            'Tanggal Order'
-        ];
+        return view('exports.orders', [
+            'orders' => $orders,
+            'period' => $period
+        ]);
     }
 }
