@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Services\AiRecommendationService;
+use Illuminate\Support\Facades\Session;
 
 class HomepageController extends Controller
 {
+    protected $aiService;
+
+    public function __construct(AiRecommendationService $aiService)
+    {
+        $this->aiService = $aiService;
+    }
+
     public function index()
     {
-        $products = Product::where('is_available', true)->take(3)->get();
+        $userId = Session::getId();
+        // Fetch recommendations from AI based on user history (Virtual Memory)
+        $products = $this->aiService->getWeeklyRecommendations($userId, 25000);
+        
         return view('web.homepage', [
             'products' => $products,
             'title' => 'Dinda Catering'
@@ -41,6 +53,11 @@ class HomepageController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
+        
+        // Catat histori saat user melihat menu ini ke dalam Virtual Memory (Flask AI)
+        $userId = Session::getId();
+        $this->aiService->recordHistory($userId, $id);
+
         return view('web.product', [
             'product' => $product,
             'title' => $product->nama_menu
